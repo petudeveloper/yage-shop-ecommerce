@@ -1,13 +1,16 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const userSchema = Schema({
-  firstName: String,
-  lastName: String,
-  password: String,
-  shippingAddres: String,
-  carts: [{ type: Schema.Types.ObjectId, ref: 'Cart' }]
-});
+const userSchema = Schema(
+  {
+    firstName: String,
+    lastName: String,
+    password: String,
+    shippingAddres: String,
+    carts: [{ type: Schema.Types.ObjectId, ref: 'Cart' }]
+  },
+  {"strict": "throw"}
+);
 
 const User =  mongoose.model('User', userSchema);
 
