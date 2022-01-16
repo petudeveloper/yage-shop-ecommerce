@@ -7,3 +7,5 @@ router.post('/users', createUser);
 
 // users#login POST /users/login
 router.post('/users/login', loginUser);
+
+module.exports = router;
