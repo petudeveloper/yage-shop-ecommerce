@@ -25,14 +25,14 @@ const loginUser = (req, resp) => {
     User.find({ email: email, firstName: firstName}, (err, data) => {
         if (err) {
             resp.send(err);
-        };
+        }
 
         if (data.length > 0) {
             resp.send(data);
         } else {
-            res.send({ message: "User doesn't exist" })
+            resp.send({ message: 'User doesn\'t exist' });
         }
-    })
+    });
 };
 
 module.exports = { createUser, loginUser };
