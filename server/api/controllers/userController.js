@@ -1,19 +1,21 @@
 const User = require('../models/User');
 
 const createUser = (req, res) => {
-    const email = req.body.email;
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
+    const password = req.body.password;
+    const email = req.body.email;
     const shippingAddres = req.body.shippingAddres;
     
     const newUser = new User ({
         firstName: firstName,
         lastName: lastName,
+        password: password,
         email: email,
         shippingAddres: shippingAddres
     });
 
-    newUser.save().then(() => res.send({ message: 'User created succesfully' }));
+    newUser.save().then(() => res.send('User created succesfully'));
 };
 
 const loginUser = (req, resp) => {
