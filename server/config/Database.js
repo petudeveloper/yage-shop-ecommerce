@@ -1,5 +1,13 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 
-mongoose.connect(process.env.MDB_CONNECTION_STRING)
-  .then(() => console.log('Database connected'))
-  .catch((err) => console.error(err));
+const connetDB = () => {
+  mongoose.connect(process.env.MDB_CONNECTION_STRING)
+    .then(() => console.log('Database connected'))
+    .catch((err) => {
+      console.error(err);
+      process.exit(1);
+    });
+};
+
+module.exports = connetDB;
