@@ -17,7 +17,20 @@ const createUser = (req, res) => {
 };
 
 const loginUser = (req, resp) => {
+    const email = req.body.email;
+    const firstName = req.body.firstName;
 
+    User.find({ email: email, firstName: firstName}, (err, data) => {
+        if (err) {
+            resp.send(err);
+        };
+
+        if (data.length > 0) {
+            resp.send(data);
+        } else {
+            res.send({ message: "User doesn't exist" })
+        }
+    })
 };
 
 module.exports = { createUser, loginUser };
