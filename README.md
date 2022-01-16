@@ -6,7 +6,9 @@
 
 ![screenshot(TBA)](./app_screenshot.png)
 
-Additional description about the project and its features.
+The following ERD was used:
+
+![ecommerce ERD](./docs/ERDecommerce.png)
 
 ## Built With
 
